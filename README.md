@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the Random Image Rumble! This simple Python program presents a canvas of images randomly chosen from your picture stash (edit the variable `images_directory` to point it to the desired location), allowing you to judge and rank them against each other. Simply enter your rankings into the entry box from best to worst then click submit, and the ratings of the images will be swapped to match your ranking order. Images that don't have a rating will be initialized with a random rating to start with.
+Welcome to the Random Image Rumble! This simple Python program presents a canvas of between 2-4 images randomly chosen from your picture stash (edit the variable `images_directory` to point it to the desired location), allowing you to judge and rank them against each other. Simply enter the image numbers into the entry box from best to worst then click submit, and the ratings of the images will be swapped to match your ranking order. Images that don't have a rating will be initialized with a random rating between 1 and 5 to start with.
 
 
 ## Peculiarities (DEFINITELY READ THIS BEFORE TRYING TO USE!)
