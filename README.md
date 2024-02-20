@@ -8,7 +8,7 @@ Welcome to the Random Image Rumble! This simple Python program presents a canvas
 ## Peculiarities (DEFINITELY READ THIS BEFORE TRYING TO USE!)
 
 - Expects to be pointed to a directory containing JPEG-XL files and/or subdirectories containing JPEG-XL files.
-- Utilizes `djxl` (expects it to be installed) to create temporary JPEG copies of the JPEG-XL files for the current round.
+- Utilizes `djxl` (expects it to be installed) to create temporary JPEG copies of the JPEG-XL files to be loaded for the current round.
 - Terminating the program without using the QUIT button will result in the current round's temporary JPEG files not being cleaned up.
 - Expects image filenames to be 32 characters long (not counting the file extension).
 - Does NOT read/write EXIF metadata. Writes and reads the rating value to/from the 4th character (index 3) of the filename.
