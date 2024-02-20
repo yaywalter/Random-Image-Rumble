@@ -22,7 +22,7 @@ Welcome to the Random Image Rumble! This simple Python program presents a canvas
 
 ## Usage
 
-1. Make sure to edit the `images_directory` variable to point to your desired location.
+1. Make sure to edit the `images_directory` variable to point to your desired image location.
 2. Run the program.
 3. Judge and rank images in each round.
 4. Use the QUIT button or the Escape key to terminate the program and clean up temporary files.
