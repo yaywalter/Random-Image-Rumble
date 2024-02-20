@@ -27,4 +27,4 @@ Welcome to the Random Image Rumble! This simple Python program presents a canvas
 3. Judge and rank images in each round.
 4. Use the QUIT button or the Escape key to terminate the program and clean up temporary files.
 
-Feel free to explore and enjoy the Random Image Rumble!
+Enjoy the Random Image Rumble!
