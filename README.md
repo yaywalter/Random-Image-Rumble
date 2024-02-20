@@ -11,9 +11,10 @@ Welcome to the Random Image Rumble! This simple Python program presents a canvas
 - Utilizes `djxl` (expects it to be installed) to create temporary JPEG copies of the JPEG-XL files to be loaded for the current round.
 - Terminating the program without using the QUIT button will result in the current round's temporary JPEG files not being cleaned up.
 - Expects image filenames to be 32 characters long (not counting the file extension).
-- Does NOT read/write EXIF metadata. Writes and reads the rating value to/from the 4th character (index 3) of the filename.
-- In cases of filename conflicts, it randomly changes characters in index positions 29-31 until it finds a unique name.
+- Does NOT read/write EXIF metadata, sad but true. Writes and reads the rating value to/from the 4th character (index 3) of the filename, for some reason!
+- In cases of filename conflicts, it tries randomly changing characters in index positions 29-31 until it finds a unique name.
 - Treats filename character index range 4-9 as a Base-36 counter for the number of other images that the image has been rated against over the course of its matches. No checks are performed for non-alphanumeric characters in these positions.
+- The code is a *very* hot mess, as my only Python experience outside of this 2-day ChatGPT-assisted project was a high school game design class back in 2008. Use at your own risk, lmao
 
 ## Niceties
 
