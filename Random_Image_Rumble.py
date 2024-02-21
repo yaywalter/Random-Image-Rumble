@@ -24,6 +24,16 @@ class Game:
 		self.create_image_labels()
 		self.create_ranking_widgets()
 
+		# Check if the images all already have the same ranking, and try again if that is the case
+		ratings = []
+		for image_path in image_paths:
+			ratings.append(os.path.basename(image_path)[3])
+		print(ratings)
+		if all(element == ratings[0] for element in ratings):
+			if ratings[0] != '0':
+				print("All ratings are the same, restarting...")
+				self.clear_canvas()
+
 	def load_and_resize_image(self, image_path, size):
 		image_pil = Image.open(image_path)
 		return ImageTk.PhotoImage(self.resize_to_fit(image_pil, size))
@@ -162,8 +172,11 @@ class Game:
 
 	def write_star_rating(self, image_path, rating_value):
 		# Write rating to metadata using exiftool
+		print("We, uh, should be writing metadata to the images....")
 		rating_percent = self.star_to_percent(rating_value)
 		real_image_path = os.path.splitext(image_path)[0]+".jxl"
+		r = subprocess.run(['exiftool', '-overwrite_original','-IgnoreMinorErrors','-Rating='+rating_value, '-RatingPercent='+rating_percent,real_image_path], check=True)
+		print(r)
 		xmp_path = real_image_path + ".xmp"
 		if os.path.exists(xmp_path):
 			subprocess.run(['exiftool', '-overwrite_original','-IgnoreMinorErrors', '-Rating='+rating_value, '-RatingPercent='+rating_percent,xmp_path], check=True)
