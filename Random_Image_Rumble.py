@@ -81,7 +81,7 @@ class Game:
 							case 2: temp_rating = random.randint(2,4)
 							case 3: temp_rating = random.randint(3,5)
 
-						initial_ratings = initial_ratings + str(random.randint(1, 5))
+						initial_ratings = initial_ratings + str(temp_rating)
 			sorted_ratings = ''.join(sorted(initial_ratings, reverse=True))
 
 			iteration = 0
@@ -162,11 +162,8 @@ class Game:
 
 	def write_star_rating(self, image_path, rating_value):
 		# Write rating to metadata using exiftool
-		print("We, uh, should be writing metadata to the images....")
 		rating_percent = self.star_to_percent(rating_value)
 		real_image_path = os.path.splitext(image_path)[0]+".jxl"
-		r = subprocess.run(['exiftool', '-overwrite_original','-IgnoreMinorErrors','-Rating='+rating_value, '-RatingPercent='+rating_percent,real_image_path], check=True)
-		print(r)
 		xmp_path = real_image_path + ".xmp"
 		if os.path.exists(xmp_path):
 			subprocess.run(['exiftool', '-overwrite_original','-IgnoreMinorErrors', '-Rating='+rating_value, '-RatingPercent='+rating_percent,xmp_path], check=True)
