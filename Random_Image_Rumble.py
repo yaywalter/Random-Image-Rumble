@@ -172,7 +172,6 @@ class Game:
 
 	def write_star_rating(self, image_path, rating_value):
 		# Write rating to metadata using exiftool
-		print("We, uh, should be writing metadata to the images....")
 		rating_percent = self.star_to_percent(rating_value)
 		real_image_path = os.path.splitext(image_path)[0]+".jxl"
 		r = subprocess.run(['exiftool', '-overwrite_original','-IgnoreMinorErrors','-Rating='+rating_value, '-RatingPercent='+rating_percent,real_image_path], check=True)
