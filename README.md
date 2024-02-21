@@ -2,10 +2,14 @@
 
 ## Overview
 
-Welcome to the Random Image Rumble! This simple Python program presents a canvas of between 2-4 images randomly chosen from your picture stash (edit the variable `images_directory` to point it to the desired location), allowing you to judge and rank them against each other. Simply enter the image numbers into the entry box from best to worst then click submit, and the ratings of the images will be swapped to match your ranking order. Upon being selected for a round, images that don't yet have a rating will be initialized with a random rating between 1 and 5 to start with.
+Welcome to the Random Image Rumble! This simple Python program provides a unique gamified approach to rating your images by presenting you with a canvas of between 2-4 images randomly chosen from your picture stash (edit the variable `images_directory` to point it to the desired location), where you then rank them against each other and the program automatically adjusts their rating metadata behind the scenes to reflect how they've fared in their matchups.
 
 
 ## Peculiarities (DEFINITELY READ THIS BEFORE TRYING TO USE!)
+
+**TL;DR essentials for getting started:** This program only looks for **JPEG-XL** files in the directory (and any subdirectories) specified with the `images_directory` variable, and these JXL files should have filenames that are at least 32 characters in length (not counting the file extension)... ideally without any non-alphanumeric characters. Requires `libjxl` and `exiftool`, linked here:
+https://github.com/libjxl/libjxl
+https://www.exiftool.org
 
 - Expects to be pointed to a directory containing JPEG-XL files and/or subdirectories containing JPEG-XL files.
 - Utilizes `djxl` (expects it to be installed) to create temporary JPEG copies of the JPEG-XL files to be loaded for the current round.
@@ -20,7 +24,7 @@ Welcome to the Random Image Rumble! This simple Python program presents a canvas
 
 1. Make sure to edit the `images_directory` variable to point to your desired image location. You may also edit the width and height of the window to best suit your display.
 2. Run the program: `python Random_Image_Rumble.py`
-3. Enter the image numbers into the text field in order from best to worst, e.g. `1342`, then click Submit (you can also press Enter/Return or Tab to submit your rankings.) to confirm and advance to the next round with a new random selection of images.
+3. Enter the image numbers into the text field in order from best to worst without any spaces, e.g. `1342`, then click Submit (you can also press Enter/Return or Tab to submit your rankings.) to confirm and advance to the next round with a new random selection of images.
 4. Use the QUIT button or the Escape key to terminate the program and clean up temporary files.
 
 Enjoy the Random Image Rumble!
