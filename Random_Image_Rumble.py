@@ -8,7 +8,7 @@ import sys
 
 class Game:
 	def setup_canvas(self):
-		match random.randint(1,3):
+		match random.randint(1,2):
 			case 1: self.image_count = 4
 			case 2: self.image_count = 2
 			case 3:	self.image_count = random.randint(2,4)
@@ -75,7 +75,13 @@ class Game:
 					if fourth_character in ['1', '2', '3', '4', '5']:
 					    initial_ratings = initial_ratings+fourth_character
 					else:
-					    initial_ratings = initial_ratings + str(random.randint(1, 5))
+						temp_rating = random.randint(1,3)
+						match temp_rating:
+							case 1: temp_rating = random.randint(1,3)
+							case 2: temp_rating = random.randint(2,4)
+							case 3: temp_rating = random.randint(3,5)
+
+						initial_ratings = initial_ratings + str(random.randint(1, 5))
 			sorted_ratings = ''.join(sorted(initial_ratings, reverse=True))
 
 			iteration = 0
@@ -143,7 +149,28 @@ class Game:
 		# Setup Canvas Anew
 		self.setup_canvas()
 
+	def star_to_percent(self, star_rating):
+		print(f"Star Rating: {star_rating}")
+		match star_rating:
+			case '1': return '1'
+			case '2': return '25'
+			case '3': return '50'
+			case '4': return '75'
+			case '5': return '99'
+		print("No match?")
+		return 0
+
 	def write_star_rating(self, image_path, rating_value):
+		# Write rating to metadata using exiftool
+		print("We, uh, should be writing metadata to the images....")
+		rating_percent = self.star_to_percent(rating_value)
+		real_image_path = os.path.splitext(image_path)[0]+".jxl"
+		r = subprocess.run(['exiftool', '-overwrite_original','-IgnoreMinorErrors','-Rating='+rating_value, '-RatingPercent='+rating_percent,real_image_path], check=True)
+		print(r)
+		xmp_path = real_image_path + ".xmp"
+		if os.path.exists(xmp_path):
+			subprocess.run(['exiftool', '-overwrite_original','-IgnoreMinorErrors', '-Rating='+rating_value, '-RatingPercent='+rating_percent,xmp_path], check=True)
+
 		path = os.path.dirname(image_path)
 		name = os.path.basename(image_path)
 		name = self.modify_char(name,3,str(rating_value))
