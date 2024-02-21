@@ -8,7 +8,7 @@ import sys
 
 class Game:
 	def setup_canvas(self):
-		match random.randint(1,2):
+		match random.randint(1,3):
 			case 1: self.image_count = 4
 			case 2: self.image_count = 2
 			case 3:	self.image_count = random.randint(2,4)
