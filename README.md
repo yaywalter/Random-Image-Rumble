@@ -7,9 +7,9 @@ Welcome to the Random Image Rumble! This simple Python program provides a unique
 
 ## Peculiarities (DEFINITELY READ THIS BEFORE TRYING TO USE!)
 
-**TL;DR essentials for getting started:** This program only looks for **JPEG-XL** files in the directory (and any subdirectories) specified with the `images_directory` variable, and these JXL files should have filenames that are at least 32 characters in length (not counting the file extension)... ideally without any non-alphanumeric characters. Requires `libjxl` and `exiftool`, linked here:
-https://github.com/libjxl/libjxl
-https://www.exiftool.org
+**TL;DR essentials for getting started:** This program only looks for **JPEG-XL** files in the directory (and any subdirectories) specified with the `images_directory` variable, and these JXL files should have filenames that are at least 32 characters in length (not counting the file extension)... ideally without any non-alphanumeric characters. In addition to Python (https://www.python.org/downloads/), it also requires `libjxl` (https://github.com/libjxl/libjxl) and `exiftool` (https://www.exiftool.org).
+
+
 
 - Expects to be pointed to a directory containing JPEG-XL files and/or subdirectories containing JPEG-XL files.
 - Utilizes `djxl` (expects it to be installed) to create temporary JPEG copies of the JPEG-XL files to be loaded for the current round.
