@@ -22,7 +22,7 @@ https://www.exiftool.org
 
 ## Usage
 
-1. Make sure to edit the `images_directory` variable to point to your desired image location. You may also edit the width and height of the window to best suit your display.
+1. Make sure to edit the `images_directory` variable to point to your desired image location. You may also edit the width and height variables for the window size to best suit your display.
 2. Run the program: `python Random_Image_Rumble.py`
 3. Enter the image numbers into the text field in order from best to worst without any spaces, e.g. `1342`, then click Submit (you can also press Enter/Return or Tab to submit your rankings.) to confirm and advance to the next round with a new random selection of images.
 4. Use the QUIT button or the Escape key to terminate the program and clean up temporary files.
