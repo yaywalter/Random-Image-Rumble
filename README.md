@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the Random Image Rumble! This simple Python program provides a unique gamified approach to rating your images by presenting you with a canvas of between 2-4 images randomly chosen from your picture stash (edit the variable `images_directory` to point it to the desired location), where you then rank them against each other and the program automatically adjusts their rating metadata behind the scenes to reflect how they've fared in their matchups.
+Welcome to the Random Image Rumble! This simple Python program provides a unique gamified approach to rating your images by presenting you with a canvas of images randomly chosen from your picture stash (edit the variable `images_directory` to point it to the desired location), where you then rank them against each other and the program automatically adjusts their rating metadata behind the scenes to reflect how they've fared in their matchups.
 
 
 ## Peculiarities (DEFINITELY READ THIS BEFORE TRYING TO USE!)
